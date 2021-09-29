@@ -1,0 +1,32 @@
+$darkColor: black;
+$lightColor: #ddd;
+$main-color : light;
+
+@mixin theme($proparty, $lightColor, $darkColor) {
+  @if($main-color == 'light'){
+    #{$proparty}: $lightColor;    
+  }@else {
+    #{$proparty}: $darkColor;
+  }
+} 
+
+.redul{
+  padding: 8rem 0;
+  text-align: center;
+  #change{    
+    padding: .5rem 2rem;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  h1{
+    $colors: #222;
+    font-size: 3rem;
+    text-align: center;
+   @include theme(background, $darkColor, $lightColor);
+   @include theme(color, $lightColor, $darkColor);
+  }
+  p{
+    $colors: #ddd;
+  }
+}
